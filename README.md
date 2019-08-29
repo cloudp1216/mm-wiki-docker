@@ -103,22 +103,22 @@ REPOSITORY                      TAG                        IMAGE ID            C
 mm-wiki                         20190718                   3a03e908ac13        3 hours ago         278MB
 ```
 
-4.创建mm_wiki库和mm_wiki用户
-```shell
+2.创建mm_wiki库和mm_wiki用户
+```sql
 MariaDB [(none)]> CREATE DATABASE mm_wiki DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 MariaDB [(none)]> CREATE USER 'mm_wiki'@'%' IDENTIFIED BY 'xxxx';
 MariaDB [(none)]> GRANT ALL ON mm_wiki.* TO 'mm_wiki'@'%';
 ```
 
 3.启动mm-wiki服务(注意: 第一次启动会进行数据初始化)
-```json
+```shell
 [root@hub mm-wiki]# docker-compose up -d
 Creating network "mm-wiki-docker_default" with the default driver
 Creating mm-wiki-docker_mm-wiki_1 ... done
 ```
 
 4.停止服务
-```json
+```shell
 [root@hub mm-wiki]# docker-compose down
 Stopping mm-wiki-docker_mm-wiki_1 ... done
 Removing mm-wiki-docker_mm-wiki_1 ... done
@@ -130,7 +130,7 @@ Removing network mm-wiki-docker_default
 
 1.访问容器地址初始化即可（注意：文件保存目录要和环境变量DATA一致）
 
-2.初始化成功后重启下容器
+2.初始化成功后重启下容器即可登录。
 
 
 

@@ -1,0 +1,14 @@
+version: "3"
+services:
+    mm-wiki:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: mm-wiki:20190718
+        environment:
+            DATA: /data
+        ports:
+          - 80:8080
+        volumes:
+          - /data/mm_wiki:/data
+
